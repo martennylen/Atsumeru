@@ -1,0 +1,234 @@
+﻿@import 'Variables.less';
+@import 'Mixins.less';
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    background-color:#F2E9CC;
+}
+
+body {
+    
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;		
+    font-size: 100%;
+	.font(@open-sans, normal, @default-font-size, @default-line-height,@default-text-color);
+	padding-left:0;
+	padding-right:0;
+	letter-spacing:0.02em;
+	margin:auto 0;
+    #site-logo {
+		padding-left:0;
+	}
+	#header-payoff {
+		padding-right:0;
+	}	
+}
+
+@media screen and (max-width: @xsmall-max) {
+    body {
+        background: url("/Content/Includes/Images/BlueSites/background-mobile.jpg") no-repeat fixed center top #F2E9CC;            
+		/*margin:auto 0px;*/
+		#site-logo {
+		    padding-left:10px;
+	    }
+	    #header-payoff {
+		    padding-right:10px;
+	    }
+    }
+}
+
+@media screen and (min-width:@xsmall-max) {
+    body {
+        background: url("/Content/Includes/Images/BlueSites/background.jpg") no-repeat center center fixed;    
+    }
+}
+.ie7,.ie8 {
+    body {
+        background: url("/Content/Includes/Images/BlueSites/background.jpg") no-repeat center center fixed;    
+        min-width:1002px;
+    }
+}
+
+legend {
+    color: @midnight-blue;
+}
+
+h1 {
+    .font(@tui-type-pro-light-bold, normal, @h1-font-size, @h1-line-height,@midnight-blue);
+    margin:0em 0 0.3em;
+}
+
+/*h2 {
+    .font(@tui-type-pro-light-bold, bold, @h2-font-size, @h2-line-height,@midnight-blue);    
+    margin:0 0 0.5em;
+}*/
+/*.ProductPage*/
+ h2 {
+    .font(@tui-type-pro-light-bold, normal, @font-size-30, @h2-line-height,@midnight-blue);    
+    margin:0 0 0.5em;
+}
+
+.travel-page-top-heading {
+    .font(@tui-type-pro, normal, @h1-font-size, @h1-line-height, @midnight-blue);    
+}
+
+h3 {
+    .font(@tui-type-pro-light-bold, normal, @font-size-18, 1.5em, @midnight-blue);		
+}
+
+h4 {
+    .font(@open-sans, 600, @font-size-12, @h4-line-height, @midnight-blue);	
+    text-transform: uppercase;            
+    margin-bottom: 0.5em;
+}
+strong {
+	font-weight:bold;
+}
+
+p {
+    margin: 0 0 1.2em;
+}
+
+a,a:visited {
+    color: @link-color;
+}
+
+a:hover {
+    text-decoration: underline;
+	color:@midnight-blue;
+}
+a:active {
+	color:@midnight-blue;
+}
+
+label{	
+	font-size:@font-size-13;
+	font-family:@open-sans;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid @default-text-color; 
+}
+
+hr.divider
+{
+	border:none;
+	color:#CCD7DB;
+	background-color: #CCD7DB;
+	height: 1px;
+}
+
+iframe {
+	border: none;
+}
+
+.white-bg {
+	background-color: #fff;
+    .html-with-frame-block {     
+		margin: 0;
+        padding: 0;
+    }
+}
+.dark-blue {
+    a {
+        color: @midnight-blue;
+    }
+}
+
+/*aside {
+	margin-top:20px;
+}*/
+
+#top-image-container {   
+	margin-bottom:1em;
+    img {        		
+		width:100%;
+		max-height:225px;
+    }
+}
+
+#main-body {
+    background: #fff;
+    max-width: 1002px;
+    margin: 0 auto;
+
+    section#main {
+        padding: 8px;
+    }
+
+    @media (min-width:768px) {
+        section#main {
+            padding: 20px;
+        }
+    }
+}
+
+.visible-phone div.dropdown {
+	 margin-bottom: 0.8em;
+}
+
+.small-gray-font {
+    font-size: @product-card-small-font-size;
+    color: @product-card-small-color;
+}
+
+.small-uppercase-font {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: @font-size-10;
+	color: @product-card-small-color;
+}
+
+.light-blue-color {
+	color: @light-blue-color;
+}
+
+.hidden {
+	display: none;
+}
+
+ .sand-box {
+    background: @sand-box-bg-color;
+    border: 1px solid @sand-box-border-color;
+    padding: 10px 20px 0;                
+}    
+
+.flex-embed {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding: 0;
+    img {		
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}    
+}
+.ie7 {
+    .flex-embed {
+        img {
+            width: auto!important;
+            height: auto!important;
+        }
+    }
+}
+
+.flex-embed iframe, .flex-embed embed, .flex-embed object {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}

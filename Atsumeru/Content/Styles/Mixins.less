@@ -1,0 +1,93 @@
+﻿@import 'Variables.less';
+
+.font(@font-family, @font-weight, @font-size, @line-height, @color) {
+    font-weight: @font-weight;	
+    font-family: @font-family;
+    font-size: @font-size;
+    line-height: @line-height;
+	color:@color;
+}
+
+.border-radius(@radius1, @radius2, @radius3, @radius4) {
+    -moz-border-radius: @radius1 @radius2 @radius3 @radius4;
+    -webkit-border-radius: @radius1 @radius2 @radius3 @radius4;
+    border-radius: @radius1 @radius2 @radius3 @radius4;
+}
+
+.border-radius(@radius1) {
+    -moz-border-radius: @radius1;
+    -webkit-border-radius: @radius1;
+    border-radius: @radius1;
+}
+
+.box-shadow(@horizontalOffset, @verticalOffset, @verticalOffset, @color) {
+    -moz-box-shadow: @horizontalOffset @verticalOffset @verticalOffset @color;
+    -webkit-box-shadow: @horizontalOffset @verticalOffset @verticalOffset @color;
+    box-shadow: @horizontalOffset @verticalOffset @verticalOffset @color;
+}
+
+.box-shadow-compound(@shadow) {
+    -webkit-box-shadow: @shadow;
+    box-shadow: @shadow;
+}
+
+.box-shadow-none() {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-element-focus() {
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(82, 168, 236, 0.6);
+    outline: 0 none;
+}
+
+.form-element-error() {
+    border-color: rgba(239, 0, 0, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(239, 0, 0, 0.6);
+    outline: 0 none;
+}
+
+.default-border() {
+	border: 1px solid #dddfe1;
+}
+
+.sub-menu-hover() {	
+	background-color:@sub-menu-hover-bg-color;
+	color:@midnight-blue;
+}
+
+.arrow-link() {
+	color: @link-color;
+	background: url("/Static/Images/Framework/arrow-icons.png") no-repeat 0 -687px;
+	padding-left:8px;
+}
+
+.product-overview-fact-box-padding() {
+	padding: 16px 19px 14px;
+}
+
+.splash-background-image(@splash-grade) {
+    background: formatstring("url('/Static/Images/ConceptOrLabel/splash/splash_{0}.png') no-repeat center center transparent", @splash-grade);
+}
+
+.clearfix () {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.box-sizing (@size: border-box) {
+	-webkit-box-sizing: @size;
+	-moz-box-sizing: @size;
+	box-sizing: @size;
+}

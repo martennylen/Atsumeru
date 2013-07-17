@@ -1,0 +1,21 @@
+﻿@cols: 12;
+@gutter: 2%;
+@one-col: (100% - (@gutter * (@cols - 1))) / @cols;
+
+.column(@num) {
+	float: left;
+	margin-right: @gutter;
+	width: (@one-col * @num) + (@gutter * (@num - 1));
+}
+
+.sub-column(@num, @parent-num) {
+	@parent-size: (@one-col * @parent-num) + (@gutter * (@parent-num - 1));
+	@child-size: (@one-col * @num) + (@gutter * (@num - 1));
+	float: left;
+	margin-right: (@gutter / @parent-size) * 100%;
+	width: (@child-size / @parent-size) * 100%;
+}
+
+.last-col() {
+	margin-right: 0 !important;
+}

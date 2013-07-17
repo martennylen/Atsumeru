@@ -1,0 +1,63 @@
+﻿@import '../ImportFiles.less';
+
+a.green-button {
+    .button(#7fbf4d, #63a62f, #c9e6b3, @white);
+    font: 1em/1em @open-sans, verdana, arial;
+    padding: 6px 15px 8px;
+    text-align: center;
+    float: right;
+    position: static;
+    right: 5px;
+    bottom: 5px;
+    text-decoration: none;
+}
+
+a.green-button:hover {
+    .button(#76b347, #5e9e2e, #c9e6b3, @white);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.midnight-button {
+    .button(#003953, #004b71, #0083c6, @white);
+    font: 1em/1em @open-sans, verdana, arial;
+    padding: 6px 15px 8px;
+    text-align: center;
+    float: right;
+    position: static;
+    right: 5px;
+    bottom: 5px;
+    text-decoration: none;
+}
+
+a.midnight-button:hover {
+    .button(#002d44, #002d44, #0083c6, @white);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button (@color1, @color2, @color3, @color4) {
+    display:inline-block;
+    background-color: @color1;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @color1), color-stop(100%, @color2));
+    background-image: -webkit-linear-gradient(top, @color1, @color2);
+    background-image: -moz-linear-gradient(top, @color1, @color2);
+    background-image: -ms-linear-gradient(top, @color1, @color2);
+    background-image: -o-linear-gradient(top, @color1, @color2);
+    background-image: linear-gradient(top, @color1, @color2);
+    border: 1px solid @color2;
+    border-bottom: 1px solid @color2;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 0 @color3;
+    box-shadow: inset 0 1px 0 0 @color3;
+    color: @color4 !important;
+}
+
+.cancel {
+    color: @link-color;
+    text-decoration: underline;
+    margin: 0 25px 0 0;
+    font-size: 0.9em;
+    cursor: pointer;
+    float: left;
+}

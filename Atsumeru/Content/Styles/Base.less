@@ -1,0 +1,87 @@
+﻿@import 'Grid.less';
+@import 'Variables.less';
+
+@outer-width: 1002px;
+
+.wrapper {
+	max-width: @outer-width;
+	margin: 0 auto;
+    overflow: hidden;
+}
+
+.lt-ie9 .wrapper {
+	min-width: @outer-width;
+}
+
+.page {
+	max-width: @outer-width - 40;
+	padding: 20px;
+	background: @white;
+}
+
+.blue-page {	
+	background: @tui-lighter-sky-color;
+}
+
+@media screen and (max-width: @medium-max) {
+	.page {
+		padding: 10px;
+	}
+}
+
+.lt-ie9 .page {
+	min-width: @outer-width - 40;
+}
+
+
+/* Responsive tables base style */
+/* Mobile */
+@media only screen and (max-width: @medium-max) {
+
+	table.responsive { 
+        margin-bottom: 0; 
+	}
+
+	.pinned { 
+        position: absolute; 
+        left: 0; 
+        top: 0;         
+        width: 35%; 
+        overflow: hidden; 
+        overflow-x: scroll;         
+	}
+	.pinned table { 
+        border-right: none; 
+        border-left: none; 
+        width: 100%; 
+	}
+	.pinned table th, .pinned table td { 
+        white-space: nowrap; 
+	}
+	.pinned td:last-child { 
+        border-bottom: 0; 
+	}
+
+	div.table-wrapper { 
+        position: relative; 
+        margin-bottom: 20px;
+        overflow: hidden;         
+	}
+	div.table-wrapper div.scrollable table { 
+        margin-left: 35%; 
+	}
+	div.table-wrapper div.scrollable { 
+        overflow: scroll; 
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch; /* Show scollbar in iOS devices */ 
+	}	
+
+	table.responsive td, table.responsive th { 
+        position: relative; 
+        white-space: nowrap; 
+        overflow: hidden; 
+	}
+	table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { 
+        display: none; 
+	}	
+}

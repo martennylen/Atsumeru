@@ -1,0 +1,65 @@
+﻿@using Atsumeru.Extensions
+@model Atsumeru.Models.Administration.AdministrationModel
+
+<div class="wrapper">
+    <div data-bind="with: administrator" style="padding: 2em">
+        <div class="group" style="max-width:800px;margin: 0 auto;">
+            <div class="form">
+                <div style="padding: 2em">
+                    <!-- ko with: collectionTypeItem -->
+                    <div>
+                        <input type="text" data-bind="value: collectionIdentifier" placeholder="Collection Identifier (eg records, games, etc)"/>
+                        <input type="text" data-bind="value: name" placeholder="Name (full name)"/>
+                    </div>
+                    <div style="margin-top:1em">
+                        <span style="font-size: 18px;color: #808080;font-weight: bold">Fields</span>
+                        <a class="green-button" data-bind="click: addField, clickBubble: false, text: '+'" style="padding: 2px 4px;float:none"></a>
+                    </div>
+                    <div data-bind="foreach: fields" class="fields-container">
+                        <input type="text" data-bind="value: $data.FieldName" placeholder="Field name"/>
+                        <select data-bind="options: $parent.fieldControls, optionsText: 'controlName', optionsValue: 'controlValue', value: FieldControl">
+                        </select>
+                        <a class="green-button" data-bind="click: $parent.removeField, clickBubble: false, text: '-'" style="padding: 3px 6px;float:none"></a>
+                    </div>
+                    <div class="group">
+                                                <a class="green-button" data-bind="click: $parent.cancelOperation, visible: !isNew(), clickBubble: false, text: 'Cancel'" style="margin-top: 2em"></a>
+                        <a class="green-button" data-bind="click: $parent.createCollectionType, clickBubble: false, text: buttonText" style="margin-top: 2em;margin-right:0.4em"></a>
+                    </div>
+                        <!-- /ko -->
+                </div>
+            </div>
+        </div>
+        <div>
+            <ul data-bind="foreach: collectionTypes">
+                <li><a href="#" data-bind="text: Name, click: $parent.loadCollection, clickBubble: false"></a></li>
+            </ul>
+        </div>
+        <div class="group">
+            <div class="form">
+                <!-- ko with: collectionItem -->
+                <input type="text" data-bind="value: id" placeholder="Id"/>
+                <input type="text" data-bind="value: name" placeholder="Name"/>
+                <input type="text" data-bind="value: alternativeName" placeholder="Japanese name"/>
+                <!-- /ko -->
+                <a class="green-button" data-bind="click: createCollectionItem, clickBubble: false, text: 'Create'"></a>
+            </div>
+        </div>
+        <div>
+            <ul data-bind="foreach: collectionItems">
+                <li data-bind="text: Name"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        var Atsumeru = Atsumeru || {};
+        Atsumeru.Resources = Atsumeru.Resources || {};
+        Atsumeru.Models = Atsumeru.Models || {};
+        
+        Atsumeru.Models.administrationModel = @Html.RenderAsJson(Model);
+    </script>
+    
+    @Scripts.Render("~/bundles/Scripts/Administer")
+}
